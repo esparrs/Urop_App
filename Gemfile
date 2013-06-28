@@ -10,6 +10,7 @@ group :development, :test do
 	# rspec-rails in a development environment so that we have access to RSpec-specific generators, 
 	# and it includes it in test mode in order to run the tests
 	gem 'rspec-rails', '2.13.1'
+	gem 'capybara', '2.1.0'
 end
 
 group :test do
