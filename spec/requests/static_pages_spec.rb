@@ -4,6 +4,19 @@ describe "StaticPages" do
 
 	subject { page }
 
+	describe "Signin page" do
+
+		it "should have the h1 'Sign In'" do
+			visit '/static_pages/signin'
+			page.should have_selector('h1', :text => "Sign In")
+		end
+
+		it "should have the right title" do
+			visit '/static_pages/signin'
+			page.should have_selector('title', :text => "Sign In", :visible => false)
+		end
+	end
+
 	describe "Home page" do
 
 		before { visit root_path }
