@@ -10,8 +10,5 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
-
-  def signin
-  end
     
 end

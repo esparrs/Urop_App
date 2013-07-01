@@ -4,56 +4,75 @@ describe "StaticPages" do
 
 	subject { page }
 
-	describe "Signin page" do
+	shared_examples_for "all static pages" do
+		it { should have_content(heading) }
+		it { should have_selector('title', :text => title, :visible => false) }
+	end
 
-		it "should have the h1 'Sign In'" do
-			visit '/static_pages/signin'
-			page.should have_selector('h1', :text => "Sign In")
-		end
-
-		it "should have the right title" do
-			visit '/static_pages/signin'
-			page.should have_selector('title', :text => "Sign In", :visible => false)
-		end
+	shared_examples_for "all clicked links" do
+		it { should have_selector('title', :text => title, :visible => false) }
 	end
 
 	describe "Home page" do
 
 		before { visit root_path }
 		
-			it { should have_selector('h1', :text => "Urop App") }
-			it { should have_selector('title', :text => "Home", :visible => false) }
+		let(:heading) { 'Urop App' }
+		let(:title) { 'Home' }
+
+		it_should_behave_like "all static pages"
 	end
 
 	describe "Help page" do
 
 		before { visit help_path }
-		
-			it { should have_selector('h1', :text => "Help") }
-			it { should have_selector('title', :text => "Help", :visible => false) }
+	
+		let(:heading) { 'Help' }
+		let(:title) { 'Help' }
+
+		it_should_behave_like "all static pages"
 	end
 
 	describe "About us page" do
 		
 		before { visit about_path }
 
-			it { should have_selector('h1', :text => "About Us") }
-			it { should have_selector('title', :text => "About Us", :visible => false) }
+		let(:heading) { 'About Us' }
+		let(:title) { 'About Us' }
+
+		it_should_behave_like "all static pages"
 	end
 
 	describe "Contact page" do
 
 		before { visit contact_path }
 
-			it { should have_selector('h1', :text => "Contact Us") }
-			it { should have_selector('title', :text => "Contact Us", :visible => false) }
+		let(:heading) { 'Contact Us' }
+		let(:title) { 'Contact Us' }
+
+		it_should_behave_like "all static pages"
 	end
 
-	describe "Sign in page" do
+	it "should have the right links on the layout" do
+		
+		visit root_path
 
-		before { visit signin_path }
+	    click_link "About"
+	    expect(page).to have_selector('title', :text => "About Us", :visible => false)
+	    click_link "Help"
+	    expect(page).to have_selector('title', :text => "Help", :visible => false)
+	    click_link "Contact"
+	    expect(page).to have_selector('title', :text => "Contact Us", :visible => false)
+	    click_link "Home"
+	    expect(page).to have_selector('title', :text => "Home", :visible => false)
+	    click_link "Urop App"
+	    expect(page).to have_selector('title', :text => "Home", :visible => false)
+	    # click_link "Settings"
+	    #expect(page).to have_selector('title', :text => "#", :visible => false)
+	    # click_link "Learn"
+	    #expect(page).to have_selector('title', :text => "#", :visible => false)
+	    # click_link "Help Us"
+	    #expect(page).to have_selector('title', :text => "#", :visible => false)
 
-			it { should have_selector('h1', :text => "Sign In") }
-			it { should have_selector('title', :text => "Sign In", :visible => false) }
-	end
+  	end
 end
