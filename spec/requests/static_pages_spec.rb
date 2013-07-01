@@ -2,59 +2,45 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+	subject { page }
 
 	describe "Home page" do
-		
-		it "should have the h1 'Urop App'" do
-			visit '/static_pages/home'
-			page.should have_selector('h1', :text => "Urop App")
-		end
 
-		# Capybara 2.0 is failing at detecting hidden text such as titles, must set :visible => false
-		it "should have the right title" do	
-			visit '/static_pages/home'
-			page.should have_selector('title', :text => "Home", :visible => false)
-		end
+		before { visit root_path }
+		
+			it { should have_selector('h1', :text => "Urop App") }
+			it { should have_selector('title', :text => "Home", :visible => false) }
 	end
 
 	describe "Help page" do
-		
-		it "should have the h1 'Help'" do
-			visit '/static_pages/help'
-			page.should have_selector('h1', :text => "Help")
-		end
 
-		# Capybara 2.0 is failing at detecting hidden text such as titles, must set :visible => false
-		it "should have the right title" do	
-			visit '/static_pages/help'
-			page.should have_selector('title', :text => "Help", :visible => false)
-		end
+		before { visit help_path }
+		
+			it { should have_selector('h1', :text => "Help") }
+			it { should have_selector('title', :text => "Help", :visible => false) }
 	end
 
 	describe "About us page" do
 		
-		it "should have the h1 'About Us'" do
-			visit '/static_pages/about'
-			page.should have_selector('h1', :text => "About Us")
-		end
+		before { visit about_path }
 
-		# Capybara 2.0 is failing at detecting hidden text such as titles, must set :visible => false
-		it "should have the right title" do	
-			visit '/static_pages/about'
-			page.should have_selector('title', :text => "About Us", :visible => false)
-		end
+			it { should have_selector('h1', :text => "About Us") }
+			it { should have_selector('title', :text => "About Us", :visible => false) }
 	end
 
 	describe "Contact page" do
 
-		it "should have the h1 'Contact Us" do
-			visit '/static_pages/contact'
-			page.should have_selector('h1', :text => "Contact Us")
-		end
+		before { visit contact_path }
 
-		it "should have the right title" do
-			visit '/static_pages/contact'
-			page.should have_selector('title', :text => "Contact Us", :visible => false)
-		end
+			it { should have_selector('h1', :text => "Contact Us") }
+			it { should have_selector('title', :text => "Contact Us", :visible => false) }
+	end
+
+	describe "Sign in page" do
+
+		before { visit signin_path }
+
+			it { should have_selector('h1', :text => "Sign In") }
+			it { should have_selector('title', :text => "Sign In", :visible => false) }
 	end
 end
