@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<body id="landing-page"><!--This tag designates that devise/registration#new is the landing page-->
+		<!-- <img class="source-image" src="Lighthouse.jpg" alt="California-Coast.jpg" /> In this, I am trying to install an absolute background image.-->
+		<div class="wrapper"><!--This tag is supposed to "wrap" elements together. This wrapper, I assume,
+									wraps the entire page.-->
+			<div id="topbar" class="navbar navbar-inverse navbar-fixed-top"><!--This will need to be edited in 
+																		greater depth. This is the initial tag to
+																		begin the navbar.-->
+				<div class="navbar-inner">
+					<div class="container">
+						<a href="signup" id="logo">
+						Hello World!
+						</a>
+						<div>
+							<nav>
+								<ul class="nav pull-right">
+									<a href="signin", id="Login"><!--Provide a class for this-->
+										Login
+									</a>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="main"><!--This tag represents the main body of the page. This should only encompass the wrapper. 					There is a lot of work that must be done with this.-->
+				<div id="landing-wrapper"><!--This will represent what is wrapped within the main body. It isn't a 
+											class but rather an id. This should cover the entire landing screen aside
+											from the header and footer.-->
+					<div class="container"><!--This will "contain" all of the elements within the landing-wrapper.-->
+						<div class="row"><!--The landing wrapper will have at least two rows. Reference the 
+											signin/up page in the Google Docs for a better idea. Initially, I'm
+											going to start by implementing signup form. Later, a new row will need
+											to be created for the native language form which will go directly above
+											it.-->
+							<%= render "devise/shared/landing_register" %>
+							<div id="promo" class="span8">
+								<h3>
+									LEARN.<br />
+									DISCOVER.<br />
+									CONNECT.<br />
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

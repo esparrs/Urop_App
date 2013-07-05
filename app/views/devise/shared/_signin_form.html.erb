@@ -1,0 +1,21 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<fieldset>
+		<legend>Sign In</legend>
+		<div class="control-group">
+			<%= f.label :username, :class => "control-label"%>
+			<div class="controls">
+				<%= f.text_field :username, :value => "", :placeholder => "Username", :class => "input-large"%>
+			</div>
+		</div>
+		<div class="control-group">
+			<%= f.label :password, :class => "control-label"%>
+			<div class="controls">
+				<%= f.password_field :password, :value => "", :placeholder => "Password", :class => "input-large"%>
+			</div>
+		</div>
+		<div>
+			<%= f.submit "Sign In", :class => "btn btn-primary" %>
+		</div>
+	</fieldset>
+<% end %>
+<%= render "devise/shared/links" %>

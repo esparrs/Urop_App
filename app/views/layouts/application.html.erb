@@ -9,10 +9,12 @@
 		<%= render 'layouts/shim' %>
 	</head>
 	<body>
-		<%= render 'layouts/header' %>
-    	<div class="container">
-      		<%= yield %>
-      		<%= render 'layouts/footer' %>
-    	</div>
+		<%- if controller_name != 'registrations' %>
+			<%= render 'layouts/header' %>
+		<% end %>
+    		<div class="container">
+      			<%= yield %>
+      			<%= render 'layouts/footer' %>
+    		</div>
 	</body>
 </html>

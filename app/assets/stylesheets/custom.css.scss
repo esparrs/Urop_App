@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url("bootstrap.css");
 
 /* mixins, variables, etc. */
 
@@ -62,39 +63,100 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+  color: #0084b4;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  text-shadow: 0px 2px 3px #000;
   &:hover {
     color: white;
     text-decoration: none;
   }
 }
 
+/* header for signup page */
+
+#Login {
+  float: right;
+  padding-top: 9px;
+  font-size: 1.25em;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+}
+
 /* footer */
 
-footer {
+#footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  background: black;
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid black;
+  // color: $grayLight;
   a {
-    color: $gray;
+    color: #0084b4;
     &:hover {
-      color: $grayDarker;
+      color: #9ae4e8;
     }
   }
   small {
     float: left;
+    color: #0084b4;
+    font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
   }
   ul {
     float: right;
     list-style: none;
     li {
       float: left;
+      font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
       margin-left: 10px;
+      margin-right: 30px;
     }
   }
 }
+
+/* landing page - incomplete */
+
+#landing-page {
+  background: url('Lighthouse.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#landing-page #landing-wrapper {
+  padding: 20px 0 40px 0;
+  #promo {
+    text-align: left;
+    h3{
+      font-size: 6.0em;
+      padding-left: 125px;
+      padding-top: 50px;
+      color: white;
+      text-shadow: 0px 5px 8px #000;
+      font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+    }
+  }
+  #landing-register {
+    h3{
+      font-size: 1.5em;
+      font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+      text-shadow: 0px 1px 1px #000;
+      margin-top: 10px;
+      border-bottom: 1px solid $grayLight;
+    }
+  }
+}
+
+
+
+
