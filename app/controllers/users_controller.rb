@@ -1,14 +1,22 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
 
-  def signup
+  # def signup
+  # end
+
+  def new
   end
 
-  #as defined by Rails Tutorial
+  # Rails Tutorial wants this to be implemented
+  # def show
+  #   @user = User.find(params[:id])
+  # end
+
+  # as defined by Rails Tutorial
   def create
-  	@user = User.new(user_params)
+    @user = User.new(user_params)
     if @user.save
-      # Handle a successful save.
+      redirect_to @user
     else
       render 'new'
     end

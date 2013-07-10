@@ -4,6 +4,7 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
+gem 'bcrypt-ruby', '3.0.1'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
@@ -11,7 +12,10 @@ group :development, :test do
 	# rspec-rails in a development environment so that we have access to RSpec-specific generators, 
 	# and it includes it in test mode in order to run the tests
 	gem 'rspec-rails', '2.13.1'
-	gem 'capybara', '2.1.0'
+	gem 'guard-rspec', '2.5.0'
+	gem 'spork-rails', github: 'sporkrb/spork-rails'
+  	gem 'guard-spork', '1.5.0'
+  	gem 'childprocess', '0.3.6'
 end
 
 group :test do
@@ -19,6 +23,8 @@ group :test do
 	# together with Selenium, one of Capybara’s dependencies.
 	gem 'selenium-webdriver', '2.0.0'
 	gem 'capybara', '2.1.0'
+	# Told to Uncomment this line on OS X by Rails Tutorial
+  	gem 'growl', '1.0.3'
 end
 
 # Use SCSS for stylesheets
@@ -35,6 +41,8 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 # Devise handles essentially the whole authentication process
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
+# factories are a more convenient way to define user objects and insert them in the database
+gem 'factory_girl_rails', '4.2.1'
 
 group :doc do
 # bundle exec rake doc:rails generates the API under doc/api.

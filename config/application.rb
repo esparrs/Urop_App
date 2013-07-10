@@ -26,5 +26,7 @@ module UropApp
     # config.i18n.default_locale = :de
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    # We don’t want passwords written to our log file.
+    config.filter_parameters += [:password, :password_confirmation]
   end
 end
