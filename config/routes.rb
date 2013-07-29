@@ -1,17 +1,25 @@
 UropApp::Application.routes.draw do
 
-  devise_for :users, :path_names => { :sign_up => 'signup', :sign_in => 'signin'}
-  resources :users # ensures that our Rails application responds to the RESTful URLs according to Rails Tutorial
+  get "exams/new"
+
+  # Not messing with this right now
+  # get "lessons/new"
+
+  # Not messing with this right now
+  # devise_for :users, :path_names => { :sign_up => 'signup', :sign_in => 'signin'}
+  # resources :users # ensures that our Rails application responds to the RESTful URLs according to Rails Tutorial
 
   root to: 'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',    to: 'static_pages#about',    via: 'get'
   match '/contact',    to: 'static_pages#contact',    via: 'get'
 
-  devise_scope :user do
-    match "/signup", :to => "devise/registrations#new", via: 'get'
-    match "/signin", to: "devise/sessions#new", via: 'get'
-  end
+  # Not messing with this right now
+  # devise_scope :user do
+  #   match "/signup", :to => "devise/registrations#new", via: 'get'
+  #   match "/signin", to: "devise/sessions#new", via: 'get'
+  # end
+
   # match '/users/signup', to: 'devise/registrations#new', via: 'get' # syntax may be necessary regarding paths
   # match '/users/signin', to: 'devise/sessions#new', via: 'get'
   # match '/users_signup',    to: 'users#signup',    via: 'get' -> going to get rid of
