@@ -43,6 +43,10 @@ gem 'jbuilder', '1.0.2'
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 # factories are a more convenient way to define user objects and insert them in the database
 gem 'factory_girl_rails', '4.2.1'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
+# This gem allows me to use Ruby variables in regular JS
+gem 'gon'
 
 group :doc do
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -53,8 +57,7 @@ group :production do
   gem 'pg', '0.15.1'
 end
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

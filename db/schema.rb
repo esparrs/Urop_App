@@ -11,17 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130729162914) do
+ActiveRecord::Schema.define(version: 20130731202234) do
 
   create_table "exams", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.integer  "lesson_id"
   end
+
+  add_index "exams", ["lesson_id"], name: "index_exams_on_lesson_id"
 
   create_table "exercises", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.integer  "exam_id"
+    t.integer  "lesson_id"
   end
+
+  add_index "exercises", ["exam_id"], name: "index_exercises_on_exam_id"
+  add_index "exercises", ["lesson_id"], name: "index_exercises_on_lesson_id"
+  add_index "exercises", ["name"], name: "index_exercises_on_name"
 
   create_table "lessons", force: true do |t|
     t.string   "name"
