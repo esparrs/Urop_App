@@ -123,6 +123,26 @@ p {
   }
 }
 
+/* home page */
+
+#home {
+  background: url('Ancient-Rome.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#home #home-button {
+  float: right;
+  border-radius: 0.25em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  margin-top: 0.25em;
+  font-size: 3.0em;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+}
+
 /* landing page - incomplete */
 
 #landing-page {

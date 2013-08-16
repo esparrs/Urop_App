@@ -2,6 +2,12 @@
 
     $(document).ready(function() {
 
+        // Actually on home page btw
+        $('#home-button').click(function(){
+            window.location.href = '/lessons/1';
+            return false;
+        });
+
         // Actualy on lessons page btw
         $('#start-exam-button').click(function(){
             window.location.href = '/exams/1';
