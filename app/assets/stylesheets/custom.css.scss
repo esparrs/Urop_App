@@ -177,6 +177,7 @@ p {
     resize: none;
     font-family: arial, sans-serif;
     font-size: 14px;
+    display: none;
 }
 
 #speech-page-content:focus {
@@ -215,6 +216,115 @@ p {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
+
+/* Examination Page */
+
+#exam-page {
+  background: url('English.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#exam-page #exam-wrapper {
+  text-align: center;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+  h1 {
+    border-bottom: 1px solid $grayLight;
+    width: 113%;
+    margin-left: -1.25em;
+  }
+}
+
+#exam-page #exam-wrapper .container {
+  overflow: auto;
+  border-radius: 0.75em;
+}
+
+#exam-page #exam-wrapper .container #exam-wrapper-midlevel-content {
+  display: block;  
+  text-align: center;
+  font-size: 1.75em;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  border-bottom: 1px solid $grayLight;
+  margin-left: -50px;
+  margin-right: -60px;
+  // margin-left: -0.75em;
+  // margin-right: 1.0em; 
+}
+
+#exam-page #exam-wrapper .container #exam-wrapper-midlevel-content  #midlevel-content-before {
+  margin-left: 3.0em;
+  margin-right: 2.0em;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+#exam-page #exam-wrapper .container #exam-title {
+  h1 {
+    font-size: 3.0em;
+    text-align: center;
+  }
+}
+
+#exam-page #exam-wrapper .container .btn-toolbar {
+  text-align: center;
+}
+
+#lesson-page {
+  background: url('london-icons.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // margin-right: 15.0em;
+}
+
+#lesson-page #lesson-wrapper {
+  text-align: center;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+  h1 {
+    border-bottom: 1px solid $grayLight;
+    width: 109.5%;
+    margin-left: -0.5em;
+  }
+}
+
+#lesson-page #lesson-wrapper .container {
+  margin-right: -1.0em;
+  margin-left: -1.0em;
+  border-radius: 0.961em;
+  padding-bottom: 0.05em;
+}
+
+#lesson-page #lesson-wrapper .container #lesson-wrapper-midlevel-content {
+  // border-bottom: 1px solid $grayLight;
+  // width: 100.25%;
+  // margin-left: -0.15em;
+  ol {
+    display:inline-block;
+    text-align:left;
+    margin-right: 1.0em;
+    font-size: 1.5em;
+    font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+  }
+}
+
+#lesson-page #lesson-wrapper .container #start-exam-button {
+  padding-top: 1.0em;
+  padding-bottom: 1.05em;
+  padding-right: 2.1em;
+  text-align: center;
+  float: center;
+  width: 100.3%;
+  margin-left: -0.78em;
+  font-size: 2.0em;
+  border-radius: 0.5em;
+}
+
+
 
 
 

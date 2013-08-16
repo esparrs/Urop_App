@@ -1,0 +1,62 @@
+<% provide(:lesson_title, @lesson.name) %>
+<% provide(:exercise_name_first, @lesson.exercises.find(1).name) %>
+<% provide(:exercise_name_second, @lesson.exercises.find(2).name) %>
+<% provide(:exercise_name_third, @lesson.exercises.find(3).name) %>
+<% provide(:exercise_name_fourth, @lesson.exercises.find(4).name) %>
+<% provide(:exercise_name_fifth, @lesson.exercises.find(5).name) %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="soundmanager2.js"></script>
+		<script>
+			soundManager.setup({
+					// where to find flash audio SWFs, as needed
+					url: '/../../swf/',
+					// optional: prefer HTML5 over Flash for MP3/MP4
+					// preferFlash: false,
+				// 	onready: function() {
+					// SM2 is ready to play audio!
+				// 	}
+			});
+		</script>
+	</head>
+	<body id="lesson-page">
+		<div id="lesson-wrapper">
+			<div class="container" style="background-color: #efefef; border: #efefef 1px solid; border-bottom: none;">
+				<div class="row span11" id="lesson-wrapper-toplevel-content">
+					<div id="lesson-title">
+						<h1><%= yield(:lesson_title) %></h1>
+					</div>
+				</div>
+				<div id="lesson-wrapper-midlevel-content" class="row span11">
+					<ol>
+						<li>
+							<%= yield(:exercise_name_first) %> (<%= yield(:exercise_name_first) %>) 
+							<div id="audio">
+								<audio id="audio-clip" controls>
+									<source src="hello.mp3" type="audio/mpeg">
+								</audio>
+							<div class="media-buttons">
+								<input type="button" class="icon-play-circle" onclick="PlayAudio()" value="Play">
+								<input type="button" class="icon-pause" onclick="PauseAudio()" value="Pause" style="display:none">
+							</div>
+						</li> 
+							<br>
+						<li><%= yield(:exercise_name_second) %> (<%= yield(:exercise_name_second) %>)</li>
+							<br> 
+						<li><%= yield(:exercise_name_third) %> (<%= yield(:exercise_name_third) %>)</li>
+							<br>
+						<li><%= yield(:exercise_name_fourth) %> (<%= yield(:exercise_name_fourth) %>)</li>
+							<br>
+						<li><%= yield(:exercise_name_fifth) %> (<%= yield(:exercise_name_fifth) %>)</li>
+							<br>
+					</ol>
+				</div>
+				<div class="row span11 footer" id="lesson-wrapper-bottomlevel-content">
+					<a href="/exams/1" id="start-exam-button" class="btn btn-large btn-primary" type="button">Start Exam!
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

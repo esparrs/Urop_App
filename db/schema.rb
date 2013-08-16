@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731202234) do
+ActiveRecord::Schema.define(version: 20130812163723) do
 
   create_table "exams", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "lesson_id"
+    t.text     "exam_description"
   end
 
   add_index "exams", ["lesson_id"], name: "index_exams_on_lesson_id"

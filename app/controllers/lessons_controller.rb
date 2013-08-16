@@ -3,5 +3,6 @@ class LessonsController < ApplicationController
   end
 
   def show
+  	@lesson = Lesson.find(1)
   end
 end

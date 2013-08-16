@@ -1,20 +1,86 @@
+<% provide(:exam_name, @exam.name) %>
+<% provide(:exam_description, @exam.exam_description) %>
+<% provide(:exercise_name_first, @exam.exercises.find(1).name) %>
+<% provide(:exercise_name_second, @exam.exercises.find(2).name) %>
+<% provide(:exercise_name_third, @exam.exercises.find(3).name) %>
+<% provide(:exercise_name_fourth, @exam.exercises.find(4).name) %>
+<% provide(:exercise_name_fifth, @exam.exercises.find(5).name) %>
 <!DOCTYPE html>
 <html>
 	<head>
+		<script type="text/javascript" charset="UTF-8" src="speechRecognition.js" ></script>
+   		<script type="text/javascript" charset="UTF-8" src="exam.js" ></script>
 	</head>
-	<body>
-		<div id="main">
-			<div class="container">
-				<div class="row">
-					<h1>Getting JS To Work</h1>
-				</div>
-				<div class="row">
-					<div id="example-type">
-						textarea with JS Web Speech API
+	<body id="exam-page">
+		<div id="exam-wrapper">
+			<div class="container" style="background-color: #efefef; border: #efefef 1px solid; border-bottom: none;">
+				<div class="row span11" id="exam-wrapper-toplevel-content">
+					<div id="exam-title">
+						<h1><%= yield(:exam_name) %></h1>
 					</div>
 				</div>
-				<div class="row">
-					<div id="speech-content-elements">
+				<div class="row span11">
+					<div id="exam-wrapper-midlevel-content">
+						<!-- Add exam description -->
+						<div id="midlevel-content-before" style="display:block">
+							<%= yield(:exam_description)%>
+						</div>
+						<div id="midlevel-content-during-first" style="display:none">
+							How do you say '<%= yield(:exercise_name_first) %>' in English?
+						</div>
+						<div id="midlevel-content-during-second" style="display:none">
+							How do you say '<%= yield(:exercise_name_second) %>' in English?
+						</div>
+						<div id="midlevel-content-during-third" style="display:none">
+							How do you say '<%= yield(:exercise_name_third) %>' in English?
+						</div>
+						<div id="midlevel-content-during-fourth" style="display:none">
+							How do you say '<%= yield(:exercise_name_fourth) %>' in English?
+						</div>
+						<div id="midlevel-content-during-fifth" style="display:none">
+							How do you say '<%= yield(:exercise_name_fifth) %>' in English?
+						</div>
+						<div id="midlevel-content-post" style="display:none">
+							You got 0 out of 5 correct.
+						</div>
+					</div>
+				</div>
+				<div class="row span11">
+					<div class="btn-toolbar" id="inline-buttons-not-during">
+						<!-- Need to fill in link path -->
+						<a href="/lessons/1" id="back-to-lesson-button" class="btn btn-large" type="button">
+							Back to Lesson
+						</a>
+						<div id="begin-exam-button" class="btn btn-large" type="button">
+							Begin Exam
+						</div>
+						<div id="restart-exam-button" class="btn btn-large" type="button" style="display:none">
+							Restart Exam
+						</div>
+					</div>
+					<div class="btn-toolbar" id="inline-buttons-during" style="display:none">
+						<!-- Need to implement the respective Javascript -->
+						<!-- Refactor Next Buttons -->
+						<div id="record-button" class="btn btn-large" type="button">
+							Record
+						</div>
+						<div id="next-button-first" class="btn btn-large" type="button">
+							Next >>
+						</div>
+						<div id="next-button-second" class="btn btn-large" type="button" style="display:none">
+							Next >>
+						</div>
+						<div id="next-button-third" class="btn btn-large" type="button" style="display:none">
+							Next >>
+						</div>
+						<div id="next-button-fourth" class="btn btn-large" type="button" style="display:none">
+							Next >>
+						</div>
+					</div>
+				</div>
+				<div class="row span11">
+					<!-- This is the most important element in getting the voice recognition to work. It can successfully be edited but be wary -->
+					<div id="speech-content-elements exam-wrapper-content">
 						<textarea id="speech-page-content" name="pageContent"></textarea>
 						<div class="speech-content-mic speech-mic">
 						</div>
@@ -22,20 +88,5 @@
 				</div>
 			</div>
 		</div>
-
-
-		<!-- Trying to get the text box via javascript -->
-		<!-- <input type="text" lang="en" x-webkit-speech /> -->
-		 <!-- type="text/javascript" x-webkit-speech> -->
-    		<!-- // var recognition = new SpeechRecognition();
-    		// recognition.onresult = function(event) {
-      		// if (event.results = 'hello') {
-        		// document.getElementsByTagName('h3')[0].style.display = 'none';
-      			// }
-    		// } -->
-  		<!-- script -->
-		<!-- <h3> -->
-			<!-- It hasn't worked -->
-		<!-- </h3> -->
 	</body>
 </html>

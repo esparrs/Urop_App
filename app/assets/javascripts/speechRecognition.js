@@ -1,9 +1,12 @@
+var count = 0;
+var correct_count = 0;
 (function($) {
 
     $(document).ready(function() {
 
         // This is helps to cycle through words
-        var count = 0
+        // var count = 0;
+        // var correct_count = 0;
 
         try {
             var recognition = new webkitSpeechRecognition();
@@ -17,10 +20,11 @@
         var textArea = $('#speech-page-content');
         var textAreaID = 'speech-page-content';
 
-        $('.speech-mic').click(function(){
+        $('#record-button').click(function(){
             startRecognition();
         });
 
+        // I don't know if this will be something that I continue to implement
         $('.speech-mic-works').click(function(){
             recognition.stop();
         });
@@ -29,7 +33,6 @@
             $('.speech-content-mic').removeClass('speech-mic').addClass('speech-mic-works');
             textArea.focus();
             recognition.start();
-            alert(gon.exercises[count])
         };
 
         recognition.onresult = function (event) {
@@ -54,15 +57,17 @@
             // First attempt at implementing embedded ruby
 			for (var i = event.resultIndex; i < event.results.length; ++i) {
 				if (event.results[i].isFinal && event.results[i][0].transcript == gon.exercises[count]) {
-					alert('it worked!!!!!');
+					correct_count++;
+                    document.getElementById('midlevel-content-post').innerHTML = "You got " + correct_count + " out of 5 correct";
 				} else {
-					alert('poop');
+					document.getElementById('midlevel-content-post').innerHTML = "You got " + correct_count + " out of 5 correct";
 				}
 			}
         };
 
         recognition.onend = function() {
             $('.speech-content-mic').removeClass('speech-mic-works').addClass('speech-mic');
+            alert('Ready');
             count++;
         };
     });

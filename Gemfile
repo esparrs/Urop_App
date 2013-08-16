@@ -47,6 +47,8 @@ gem 'factory_girl_rails', '4.2.1'
 gem 'therubyracer', platforms: :ruby
 # This gem allows me to use Ruby variables in regular JS
 gem 'gon'
+# This gem allows me to implement sound
+gem 'soundmanager-rails', :git => 'git://github.com/glaszig/soundmanager-rails.git'
 
 group :doc do
 # bundle exec rake doc:rails generates the API under doc/api.

@@ -28,5 +28,8 @@ module UropApp
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     # We don’t want passwords written to our log file.
     config.filter_parameters += [:password, :password_confirmation]
+    # Assuming you are using the asset pipeline, you will need to at least tell rails to "precompile" the swf 
+    # (same with the js too if you are using it as a standalone javascript anywhere)
+    config.assets.precompile += %w(soundmanager2.swf soundmanager2_flash9.swf)
   end
 end
