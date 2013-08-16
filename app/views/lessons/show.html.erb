@@ -33,28 +33,44 @@
 						<li>
 							<%= yield(:exercise_name_first) %> (<%= yield(:exercise_name_first) %>) 
 							<div id="audio">
-								<audio id="audio-clip" controls>
-									<source src="hello.mp3" type="audio/mpeg">
-								</audio>
-							<div class="media-buttons">
-								<input type="button" class="icon-play-circle" onclick="PlayAudio()" value="Play">
-								<input type="button" class="icon-pause" onclick="PauseAudio()" value="Pause" style="display:none">
+								<%= audio_tag("hello.mp3", controls: true) %>
 							</div>
 						</li> 
 							<br>
-						<li><%= yield(:exercise_name_second) %> (<%= yield(:exercise_name_second) %>)</li>
+						<li>
+							<%= yield(:exercise_name_second) %> (<%= yield(:exercise_name_second) %>)
+							<div id="audio">
+								<%= audio_tag("goodbye.mp3", controls: true) %>
+							</div>
+						</li>
 							<br> 
-						<li><%= yield(:exercise_name_third) %> (<%= yield(:exercise_name_third) %>)</li>
+						<li>
+							<%= yield(:exercise_name_third) %> (<%= yield(:exercise_name_third) %>)
+							<div id="audio">
+								<%= audio_tag("howAreYou.mp3", controls: true) %>
+							</div>
+						</li>
 							<br>
-						<li><%= yield(:exercise_name_fourth) %> (<%= yield(:exercise_name_fourth) %>)</li>
+						<li>
+							<%= yield(:exercise_name_fourth) %> (<%= yield(:exercise_name_fourth) %>)
+							<div id="audio">
+								<%= audio_tag("niceToMeetYou.mp3", controls: true) %>
+							</div>
+						</li>
 							<br>
-						<li><%= yield(:exercise_name_fifth) %> (<%= yield(:exercise_name_fifth) %>)</li>
+						<li>
+							<%= yield(:exercise_name_fifth) %> (<%= yield(:exercise_name_fifth) %>)
+							<div id="audio">
+								<%= audio_tag("haveAGoodDay.mp3", controls: true) %>
+							</div>
+						</li>
 							<br>
 					</ol>
 				</div>
 				<div class="row span11 footer" id="lesson-wrapper-bottomlevel-content">
-					<a href="/exams/1" id="start-exam-button" class="btn btn-large btn-primary" type="button">Start Exam!
-					</a>
+					<div id="start-exam-button" class="btn btn-large btn-primary" type="button">
+					Start Exam!
+					</div>
 				</div>
 			</div>
 		</div>

@@ -22,6 +22,7 @@ var correct_count = 0;
 
         $('#record-button').click(function(){
             startRecognition();
+            document.getElementById('record-button').style.display = 'none';
         });
 
         // I don't know if this will be something that I continue to implement
